@@ -119,9 +119,10 @@ li {
 }
 .img-caption {
   position: absolute;
-  padding: 27px 95px;
+  padding: 27px 0px;
   bottom: 0;
   width: 100%;
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.1428;
   text-align: center;
@@ -176,7 +177,7 @@ li {
   height: 44px;
   justify-content: center;
   align-items: center;
-  transition-property: background-color color;
+  transition-property: background-color, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -255,10 +256,13 @@ li {
 .current {
   position: relative;
 }
+.header-link.current{
+  color: var(--accent-text-color);
+}
 .current::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   width: 100%;
   height: 4px;
@@ -431,7 +435,7 @@ li {
   cursor: pointer;
   border: 0px;
   border-radius: 4px;
-  transition-property: background-color color box-shadow;
+  transition-property: background-color, color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -467,11 +471,15 @@ li {
 }
 .work-img {
   position: relative;
+  overflow: hidden;
 }
 .works-caption {
   opacity: 0;
   position: absolute;
-  padding: 63px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
   width: 100%;
   height: 100%;
   bottom: 0;
@@ -485,7 +493,8 @@ li {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.caption:hover .works-caption {
+.work-link:focus .works-caption,
+.work-link:hover .works-caption {
   transform: translateY(0);
   opacity: 1;
 }
@@ -558,7 +567,7 @@ li {
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   color: rgba(175, 177, 184, 1);
-  transition-property: color border;
+  transition-property: color, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
